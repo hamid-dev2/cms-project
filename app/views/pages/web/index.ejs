@@ -1,0 +1,19 @@
+<%- include("../../partials/web/header.ejs") %>
+
+<div class="container">
+    <div class="row g-4 g-md-5 justify-content-center">
+      <% for (let user of users) { %>
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="card team-card shadow wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="200ms" style="visibility: visible; animation-duration: 1000ms; animation-delay: 200ms; animation-name: fadeInUp;">
+            <div class="card-body p-4 py-md-5 text-center">
+              <h6><%= user.name %> </h6>
+              <p class="fz-14"><%= user.skill %> </p>
+              <div class="border"></div><a class="mt-3 btn btn-info btn-minimal" ><%= user._id %> </a>
+            </div>
+          </div>
+        </div> 
+      <% } %> 
+    </div>
+  </div>
+
+<%- include("../../partials/web/footer.ejs") %> 

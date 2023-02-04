@@ -1,0 +1,71 @@
+<%- include("../../../partials/dashboard/header.ejs") %> 
+<%- include("../../../partials/dashboard/sidebar.ejs") %>
+
+<div class="content-body">
+
+    <!-- Page Headings Start -->
+    <div class="row justify-content-between align-items-center mb-10">
+
+        <!-- Page Heading Start -->
+        <div class="col-12 col-lg-auto mb-20">
+            <div class="page-heading">
+                <h3>Admin-panel <span>/ All Users</span></h3>
+            </div>
+        </div><!-- Page Heading End -->
+
+    </div><!-- Page Headings End -->
+
+    <div class="row">
+
+        <!--Manage Product List Start-->
+        <div class="col-12">
+            <div class="table-responsive">
+                <table class="table table-vertical-middle">
+                    <thead>
+                        <tr>
+                            <th>User ID</th>
+                            <th>User Name</th>
+                            <th>User Email</th>
+                            <th>User Skill</th>
+                            <th>Role</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <% for(let user of users) { %> 
+                            <tr>
+                                <td><%= user._id %> </td>
+                                <td><%= user.name %> </td>
+                                <td><%= user.email %> </td>
+                                <td><%= user.skill %> </td>
+                                <td>
+                                    <% if(user.role === 'admin'){ %>
+                                        <span class="badge badge-primary"><%= user.role %> </span> 
+                                    <% }else { %> 
+                                        <span class="badge badge-dark"><%= user.role %> </span>
+                                    <% } %> 
+                                </td>
+                                <td>
+                                    <div class="table-action-buttons" style="display: flex;">
+                                        <a class="edit button button-box button-xs button-info" href="/dashboard/admin/users/edit-user/<%= user._id %>"><i class="zmdi zmdi-edit"></i></a>
+                                        <form action="#" method="post">
+                                            <input type="hidden" name="userId" value=<%= user._id %> >
+                                            <button class="delete button button-box button-xs button-danger ml-3"><i class="zmdi zmdi-delete"></i></button>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                        <% } %>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!--Manage Product List End-->
+
+    </div>
+
+</div>
+
+<%- include("../../../partials/dashboard/footer.ejs") %> 

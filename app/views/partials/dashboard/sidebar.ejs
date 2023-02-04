@@ -1,0 +1,25 @@
+<div class="side-header show">
+    <button class="side-header-close"><i class="zmdi zmdi-close"></i></button>
+    <!-- Side Header Inner Start -->
+    <div class="side-header-inner custom-scroll ps ps--active-y">
+
+        <nav class="side-header-menu" id="side-header-menu">
+            <ul>
+                <% if(userData.role === 'admin') { %>
+                    <li><a href="/dashboard/admin"><i class="ti-home"></i> <span>Dashboard</span></a></li>
+                    <li class="has-sub-menu"><a href="#"><i class="ti-user"></i> <span>Users</span><span class="menu-expand"><i class="zmdi zmdi-chevron-down"></i></span></a>
+                        <ul class="side-header-sub-menu">
+                            <li><a href="/dashboard/admin/users/all-users"><span>All Users</span></a></li>
+                            <li><a href="/dashboard/admin/users/add-user"><span>Add New User</span></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/"><i class="ti-crown"></i> <span>See The Website</span></a></li>
+                <% }else{ %>
+                    <li><a href="/dashboard/user"><i class="ti-home"></i> <span>Dashboard</span></a></li>
+                    <li><a href="/"><i class="ti-crown"></i> <span>See The Website</span></a></li>
+                <% } %> 
+            </ul>
+        </nav>
+
+    <div class="ps__rail-x" style="left: 0px; bottom: 3px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__rail-y" style="top: 0px; height: 459px; right: 3px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 248px;"></div></div></div><!-- Side Header Inner End -->
+</div>

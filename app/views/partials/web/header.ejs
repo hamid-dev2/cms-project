@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Saasbox - Multipurpose HTML Template for Saas &amp; Agency">
+  <!-- Title-->
+  <title><%= pageTitle %> </title>
+  <!-- Favicon-->
+  <link rel="shortcut icon" href="/web/img/core-img/favicon.ico" type="image/x-icon">
+  <!-- All CSS Stylesheet-->
+  <link rel="stylesheet" href="/web/css/all-css-libraries.css">
+  <!-- Core Stylesheet-->
+  <link rel="stylesheet" href="/web/style.css">
+</head>
+
+<body>
+  <!-- Preloader-->
+  <div class="preloader" id="preloader">
+    <div class="spinner-grow text-light" role="status"><span class="visually-hidden">Loading...</span></div>
+  </div>
+  <!-- Header Area-->
+  <header class="header-area">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <!-- Navbar Brand --><a class="navbar-brand" href="index.html"><img src="/web/img/core-img/logo-white.png"
+            alt=""></a>
+        <!-- Navbar Toggler -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#saasboxNav"
+          aria-controls="saasboxNav" aria-expanded="false" aria-label="Toggle navigation"><i
+            class="bi bi-grid"></i></button>
+        <!-- Navbar Nav -->
+        <div class="collapse navbar-collapse" id="saasboxNav">
+          <ul class="navbar-nav navbar-nav-scroll">
+            <li ><a href="/">Home</a></li>
+          </ul>
+          <!-- Login Button -->
+          <div class="ms-auto mb-3 mb-lg-0">
+            <% if(userData) { %> 
+              <% if(userData.role === 'admin'){ %> 
+                <a class="btn btn-warning btn-sm" href="/dashboard/admin">Account</a>
+              <% }else{ %>
+                <a class="btn btn-warning btn-sm" href="/dashboard/user">Account</a>
+              <% } %> 
+              <% }else{ %>
+                <a class="btn btn-outline-warning btn-sm" href="/dashboard/auth/login">Login</a>
+                <a class="btn btn-warning btn-sm" href="/dashboard/auth/signup">Signup</a> 
+            <% } %> 
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!-- Breadcrumb Area-->
+  <div class="breadcrumb-wrapper bg-img bg-overlay" style="background-image: url('img/bg-img/12.jpg');">
+    <div class="container h-100">
+      <div class="row h-100 align-items-center">
+        <div class="col-12">
+          <div class="breadcrumb-content">
+            <h2 class="breadcrumb-title">Users Info</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mb-120 d-block"></div>

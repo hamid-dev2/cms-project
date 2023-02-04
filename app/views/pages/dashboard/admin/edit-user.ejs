@@ -1,0 +1,62 @@
+
+<%- include("../../../partials/dashboard/header.ejs") %> 
+<%- include("../../../partials/dashboard/sidebar.ejs") %>
+
+<div class="content-body">
+
+    <!-- Page Headings Start -->
+    <div class="row justify-content-between align-items-center mb-10">
+
+        <!-- Page Heading Start -->
+        <div class="col-12 col-lg-auto mb-20">
+            <div class="page-heading">
+                <h3>Admin-Panel <span>/ Edit User</span></h3>
+            </div>
+        </div><!-- Page Heading End -->
+
+    </div><!-- Page Headings End -->
+
+    <div class="add-edit-product-wrap col-12">
+
+        <div class="add-edit-product-form">
+            <form action="#" method="post">
+    
+                <h4 class="title">User Info</h4>
+    
+                <div class="row">
+                    <div class="col-lg-6 col-12 mb-30"><input class="form-control" type="text" value="<%= user.name %>"  name="name" placeholder="Name*"></div>
+                    <div class="col-lg-6 col-12 mb-30"><input class="form-control" type="text" value="<%= user.email %>"  name="email" placeholder="Email*"></div>
+                    <div class="col-lg-6 col-12 mb-30"><input class="form-control" type="text" value="<%= user.skill %>"  name="skill" placeholder="Skill*"></div>
+                </div>
+
+                <div class="row mb-20">
+                    <div class="col-sm-6 col-12 mb-20">
+                        <h6 class="mb-15">Role</h6>
+                        <div class="adomx-checkbox-radio-group inline">
+                            <% if (user.role === 'admin') { %> 
+                                <label class="adomx-radio-2"><input type="radio" name="role" value="admin" checked> <i class="icon"></i> Admin</label>
+                                <label class="adomx-radio-2"><input type="radio" name="role" value="user"> <i class="icon"></i> User</label>
+                            <% }else{ %> 
+                                <label class="adomx-radio-2"><input type="radio" name="role" value="admin"> <i class="icon"></i> Admin</label>
+                                <label class="adomx-radio-2"><input type="radio" name="role" value="user" checked> <i class="icon"></i> User</label>
+                            <% } %> 
+
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Button Group Start -->
+                <div class="row">
+                    <div class="d-flex flex-wrap justify-content-start col mbn-10">
+                        <button class="button button-outline button-primary mb-10 ml-10 mr-0">Save &amp; Update</button>
+                    </div>
+                </div><!-- Button Group End -->
+    
+            </form>
+        </div>
+    
+    </div>
+
+</div>
+
+<%- include("../../../partials/dashboard/footer.ejs") %> 

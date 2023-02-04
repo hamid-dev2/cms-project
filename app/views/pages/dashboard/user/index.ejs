@@ -1,0 +1,40 @@
+<%- include("../../../partials/dashboard/header.ejs") %> 
+<%- include("../../../partials/dashboard/sidebar.ejs") %>
+
+<div class="content-body">
+
+    <!-- Page Headings Start -->
+    <div class="row justify-content-between align-items-center mb-10">
+
+        <!-- Page Heading Start -->
+        <div class="col-12 col-lg-auto mb-20">
+            <div class="page-heading">
+                <h3>User-panel <span>/ Profile</span></h3>
+            </div>
+        </div><!-- Page Heading End -->
+
+    </div><!-- Page Headings End -->
+
+    <div class="row mbn-50">
+
+        <!--Author Top Start-->
+        <div class="col-12 mb-50">
+            <div class="author-top">
+                <div class="inner">
+                    <div class="author-profile">
+                        <div class="info">
+                            <h5>User Name : <%= userData.name %> </h5>
+                            <span>User Skill : <%= userData.skill %> </span>
+                            <a href="/dashboard/user/edit-user/<%= userData._id %> " class="edit"><i class="zmdi zmdi-edit"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Author Top End-->
+    
+    </div>
+
+</div>
+
+<%- include("../../../partials/dashboard/footer.ejs") %> 
